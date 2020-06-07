@@ -16,7 +16,7 @@ public class Try01Test {
     @Test
     public void shouldReturnFilledClinicalDocumentObjectFromXmlFile() throws Exception {
         // given
-        final String filePath = Constants.PROJECT_RESOURCES_PATH + "t01\\2.16.840.1.113883.3.4424.13.10.1.26-1.xml";
+        final String filePath = Constants.PROJECT_TEST_RESOURCES_PATH + "t01\\2.16.840.1.113883.3.4424.13.10.1.26-1.xml";
 
         // when
         final ClinicalDocument result = try01.unmarshallFileToClinicalDocument(filePath);
