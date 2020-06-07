@@ -82,6 +82,7 @@
                                     <xsd>src/main/resources/xsd/extPL_r2.xsd</xsd>
                                     <bindingFile>src/main/resources/xsd/POCD_MT000040_extended_pharmacy.xjb</bindingFile>
                                     <extension>true</extension>
+                                    <extensionArgs>-no-header</extensionArgs>
                                 </xsdOption>
                             </xsdOptions>
                         </configuration>
