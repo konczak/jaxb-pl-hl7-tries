@@ -4,8 +4,9 @@
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:annox="http://annox.dev.java.net"
         xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
-        jaxb:extensionBindingPrefixes="xjc"
+        jaxb:extensionBindingPrefixes="xjc annox"
         version="2.1">
 
     <jaxb:globalBindings generateMixedExtensions="true">
@@ -22,6 +23,9 @@
         <jaxb:schemaBindings>
             <jaxb:package name="pl.konczak.tries.pl.gov.csioz.xsd.extpl.r2"/>
         </jaxb:schemaBindings>
+<!--        <jaxb:bindings node="//xs:complexType[@name='ClinicalDocument']">-->
+<!--            <annox:annotateClass>@javax.xml.bind.annotation.XmlRootElement(name="ClinicalDocument")</annox:annotateClass>-->
+<!--        </jaxb:bindings>-->
     </jaxb:bindings>
 
     <jaxb:bindings schemaLocation="xmldsig-core-schema.xsd">
@@ -42,6 +46,12 @@
         </jaxb:bindings>
         <jaxb:bindings node="//xs:complexType[@name='POCD_MT000040.Section']/xs:attribute[@name='ID']">
             <jaxb:property name="id2"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:complexType[@name='POCD_MT000040.ManufacturedProduct']/xs:sequence/xs:element[@ref='pharm:subjectOf5']">
+            <annox:annotate target="field">@javax.xml.bind.annotation.XmlElement(namespace = "urn:ihe:pharm", nillable = false)</annox:annotate>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:complexType[@name='POCD_MT000040.Material']/xs:sequence/xs:element[@ref='pharm:asContent']">
+            <annox:annotate target="field">@javax.xml.bind.annotation.XmlElement(namespace = "urn:ihe:pharm", nillable = false)</annox:annotate>
         </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>

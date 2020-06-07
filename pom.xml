@@ -82,7 +82,7 @@
                                     <xsd>src/main/resources/xsd/extPL_r2.xsd</xsd>
                                     <bindingFile>src/main/resources/xsd/POCD_MT000040_extended_pharmacy.xjb</bindingFile>
                                     <extension>true</extension>
-                                    <extensionArgs>-no-header</extensionArgs>
+                                    <extensionArgs>-no-header,-Xannotate</extensionArgs>
                                 </xsdOption>
                             </xsdOptions>
                         </configuration>
@@ -91,6 +91,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-basics-annotate</artifactId>
+                        <version>1.1.0</version>
+                    </dependency>
+
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
