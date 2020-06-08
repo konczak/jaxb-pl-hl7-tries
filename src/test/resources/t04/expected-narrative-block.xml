@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><ClinicalDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pharm="urn:ihe:pharm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extPL="http://www.csioz.gov.pl/xsd/extPL/r2" xmlns:hl7="urn:hl7-org:v3">
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <title>Rpz (Cito)</title>
+                    <text>
+                        <paragraph ID="SBADM_1">
+                            <content ID="p1_nazwaLeku" styleCode="xPLbig">Rilutek 50mg tabl. powl.</content>
+                            <content ID="p1_mocSkladnikowLeku">(0.05 g)</content>
+                            <content ID="p1_edytuj_mocLeku"/>
+                            <content ID="p1_edytuj_postacLeku"/>
+                            <content ID="p1_nieZamieniac" styleCode="xPLbig">NZ</content>
+                        </paragraph>
+                        <paragraph>
+                            <content ID="p1_iloscLeku">1</content>
+                            <content ID="p1_krotnosc_opis">op. po</content>
+                            <content ID="p1_wielkoscOpakowania">56 szt.</content>
+                        </paragraph>
+                        <paragraph ID="DS_1">
+                            <content ID="p1_stosowanie_opis_1">D.S.</content>
+                            <content ID="p1_stosowanie_wartosc_1" styleCode="Bold">Co 24 h po 2 tabletki</content>
+                            <content ID="p1_edytuj_stosowanie_wartosc_1" styleCode="Bold"/>
+                        </paragraph>
+                        <paragraph ID="ACT_2">
+                            <content ID="p1_odplatnosc_opis">Odpłatność</content>
+                            <content ID="p1_odplatnosc_wartosc" styleCode="Bold">100%</content>
+                        </paragraph>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <title>Dane o ubezpieczeniu i uprawnieniach</title>
+                    <text>
+                        <paragraph ID="ACT_3">
+                            <content ID="p1_platnik_opis_1">Oddział NFZ</content>
+                            <content ID="p1_platnik_wartosc_1" styleCode="Bold">07</content>
+                        </paragraph>
+                        <paragraph>
+                            <content ID="p1_uprawnieniaDodatkowe_opis_1">Uprawnienia dodatkowe</content>
+                            <content ID="p1_uprawnieniaDodatkowe_wartosc_1" styleCode="Bold">IB</content>
+                             (
+                            <content ID="p1_dokumentUprawnien_wartosc_1">Nr leg.: 234/1992</content>
+                            )
+                        </paragraph>
+                    </text>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>
