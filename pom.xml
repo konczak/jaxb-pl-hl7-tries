@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pl.konczak.tries</groupId>
+    <artifactId>jaxb-pl-hl7-tries</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <description>Purpose of this project is to practice with using JAXB over complicated HL7 (medical schemas) with extension for PL</description>
+
+    <properties>
+        <assertj.version>3.13.2</assertj.version>
+        <com.sun.xml.ws.version>2.3.2</com.sun.xml.ws.version>
+        <jakarta.xml.ws.version>2.3.2</jakarta.xml.ws.version>
+        <java.version>11</java.version>
+        <junit.jupiter.version>5.5.2</junit.jupiter.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>Maven Central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- API -->
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+            <version>${jakarta.xml.ws.version}</version>
+        </dependency>
+        <!-- Runtime -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>${com.sun.xml.ws.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <!-- Force alphabetical order to have a reproducible build -->
+                    <runOrder>alphabetical</runOrder>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-xjc-plugin</artifactId>
+                <!--WARN: a compliant version to rest of Apache CXF 3.3.2 is not available for this plugin-->
+                <version>3.2.3</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <sourceRoot>${project.build.sourceDirectory}</sourceRoot>
+                            <xsdOptions>
+                                <xsdOption>
+                                    <xsd>src/main/resources/xsd/extPL_r2.xsd</xsd>
+                                    <bindingFile>src/main/resources/xsd/POCD_MT000040_extended_pharmacy.xjb</bindingFile>
+                                    <extension>true</extension>
+                                </xsdOption>
+                            </xsdOptions>
+                        </configuration>
+                        <goals>
+                            <goal>xsdtojava</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
