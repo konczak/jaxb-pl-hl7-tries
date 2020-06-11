@@ -265,5 +265,3 @@ fabric.properties
 # project specific
 # **************************************************************************
 
-# ignore whole idea folder - no IDE project settings sharing
-.idea/
