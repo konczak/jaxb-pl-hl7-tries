@@ -21,6 +21,7 @@ Provided .xjb to adjust what will be generated.
 - `Try07` takes ClinicalDocument and transform it into other ClinicalDocument instance with narrative sections ONLY (it does not apply it to original ClinicalDocument). As auto-magic transformation from `Try05` did not work it transforms ClinicalDocument into String with XML, adjust String to be parsable, unmarshal String to ClinicalDocument.
 - `Try08` applies ClinicalDocument with narrative sections only elements into ClinicalDocument without narrative sections
 - `Try09` takes ClinicalDocument and transforms it to String with HTML for visual presentation to m.d. the one provided by CSIOZ
+- `Try10` takes ClinicalDocument and params potentially from save e-prescription response to transform them into printable info HTML. Note: it uses Saxon transformer rather than default Xalan as default could not handle too long content of XSL file sections.
 
 Each try has tests proving that it still works - however `pl.konczak.jaxbplhl7tries.util.Constants` have hardcoded paths rather than to resource files. 
 
