@@ -9,7 +9,7 @@
     <description>Purpose of this project is to practice with using JAXB over complicated HL7 (medical schemas) with extension for PL</description>
 
     <properties>
-        <assertj.version>3.13.2</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
         <com.sun.xml.ws.version>2.3.2</com.sun.xml.ws.version>
         <jakarta.xml.ws.version>2.3.2</jakarta.xml.ws.version>
         <java.version>11</java.version>
